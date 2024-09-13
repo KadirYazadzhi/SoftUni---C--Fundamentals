@@ -1,18 +1,18 @@
-# ⚙️ Programming Basics with C# - SoftUni  📚
+# ⚙️ C# Fundamentals - SoftUni  📚
 
-Welcome to the repository for Programming Basics with C# course tasks from SoftUni!
+Welcome to the repository for C# Fundamentals course tasks from SoftUni!
 
 <img src="CSharp-Basic-preview.png">
 
 ## 📖 Introduction
-This repository contains a collection of tasks from the Programming Basics with C# course at SoftUni. The tasks are organized according to the topics and exercises covered in the course. Each task is thoroughly tested, but if you encounter any issues, feel free to reach out.
+This repository contains a collection of tasks from the C# Fundamentals course at SoftUni. The tasks are organized according to the topics and exercises covered in the course. Each task is thoroughly tested, but if you encounter any issues, feel free to reach out.
 
 ## 📂 Contents
 The tasks are divided into folders based on the topics covered in the course. Each folder contains the tasks related to that specific topic.
 
 ## 🛠️ How to Use
 1. Clone the repository to your local machine using the following command:
-`git clone https://github.com/KadirYazadzhi/SoftUni---Programming-Basics-with-CSharp.git`
+`git clone https://github.com/KadirYazadzhi/SoftUni---Programming-CSharp-Fundamentals.git`
 2. Navigate to the desired task folder to view the C# files.
 3. If you encounter any issues or have suggestions for improvement, please open an issue or reach out to me via email.
 
