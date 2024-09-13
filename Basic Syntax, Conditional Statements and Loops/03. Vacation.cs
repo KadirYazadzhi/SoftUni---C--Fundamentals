@@ -1,6 +1,6 @@
 using System;
 
-class Ages {
+class Vacations {
     static double result(int groupNum, string type, string day) {
         double result = 0;
         if (type == "Students") {
