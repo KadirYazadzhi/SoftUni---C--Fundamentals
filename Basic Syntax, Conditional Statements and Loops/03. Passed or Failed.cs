@@ -1,6 +1,6 @@
 using System;
 
-class Passed {
+class PassedOrFailed {
     static void Main() {
         double num = double.Parse(Console.ReadLine());
         if (num >= 3.00) {

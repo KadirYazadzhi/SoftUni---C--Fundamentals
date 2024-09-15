@@ -1,6 +1,6 @@
 using System;
 
-class Passed {
+class BackIn30Minutes {
     static void Main() {
         int hours = int.Parse(Console.ReadLine());
         int minutes = int.Parse(Console.ReadLine());
