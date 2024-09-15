@@ -1,6 +1,6 @@
 using System;
 
-class StrongNumbers {
+class PadawanEquipment {
     static void Main() {
         double amountOfMoney = double.Parse(Console.ReadLine());
         int countOfStudents = int.Parse(Console.ReadLine());

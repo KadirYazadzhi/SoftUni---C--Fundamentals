@@ -1,6 +1,6 @@
 using System;
 
-class PrintAndSum {
+class Login {
     static string reverse(string name) {
         string reverseName = "";
         

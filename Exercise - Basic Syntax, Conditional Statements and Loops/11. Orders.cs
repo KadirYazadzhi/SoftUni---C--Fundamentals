@@ -1,6 +1,6 @@
 using System;
 
-class RageExpenses {
+class Orders {
     static void Main() {
         int num = int.Parse(Console.ReadLine()); 
         double sum = 0; 

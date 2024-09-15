@@ -1,6 +1,6 @@
 using System;
 
-class StrongNumbers {
+class TriangleOfNumbers {
     static void Main() {
         int num = int.Parse(Console.ReadLine());
 
