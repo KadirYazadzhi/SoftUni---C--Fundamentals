@@ -1,6 +1,6 @@
 using System;
 
-class WaterOverflows {
+class BeerKegs {
     static void Main() {
         int num = int.Parse(Console.ReadLine());
 
