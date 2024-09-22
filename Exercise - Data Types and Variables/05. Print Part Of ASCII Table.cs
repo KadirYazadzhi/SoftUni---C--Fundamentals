@@ -1,6 +1,6 @@
 using System;
 
-class SumOfChars {
+class PrintASCII {
     static void Main() {
         int alphabetStartNumber = int.Parse(Console.ReadLine());
         int alphabetEndNumber = int.Parse(Console.ReadLine());
