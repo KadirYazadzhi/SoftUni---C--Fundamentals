@@ -1,24 +1,32 @@
 using System;
+using System.Numerics; 
 
-class PokeMon {
+class SnowBalls {
     static void Main() {
-        int power = int.Parse(Console.ReadLine());
-        int distance = int.Parse(Console.ReadLine());
-        int exhaustionFactor = int.Parse(Console.ReadLine());
+        int count = int.Parse(Console.ReadLine());
 
-        double halfPower = power / 2.0;
-        int count = 0;
+        BigInteger maxSnowballValue = 0;
+        int maxSnowballSnow = 0;
+        int maxSnowballTime = 0;
+        int maxSnowballQuality = 0;
 
-        while (power >= distance) {
-            power -= distance;
-            count++;
+        for (int i = 0; i < count; i++) {
+            int snowballSnow = int.Parse(Console.ReadLine());
+            int snowballTime = int.Parse(Console.ReadLine());
+            int snowballQuality = int.Parse(Console.ReadLine());
 
-            if (power == halfPower && exhaustionFactor != 0) {
-                power /= exhaustionFactor;
+            if (snowballTime > 0) {
+                BigInteger snowballValue = BigInteger.Pow(snowballSnow / snowballTime, snowballQuality);
+
+                if (maxSnowballValue < snowballValue) {
+                    maxSnowballValue = snowballValue;
+                    maxSnowballSnow = snowballSnow;
+                    maxSnowballTime = snowballTime;
+                    maxSnowballQuality = snowballQuality;
+                }
             }
         }
 
-        Console.WriteLine(power);
-        Console.WriteLine(count);
+        Console.WriteLine($"{maxSnowballSnow} : {maxSnowballTime} = {maxSnowballValue} ({maxSnowballQuality})");
     } 
 }
