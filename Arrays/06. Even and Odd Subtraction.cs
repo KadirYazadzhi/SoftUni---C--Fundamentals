@@ -3,18 +3,26 @@ using System.Linq;
 
 class SumAndOddEvenNumbers {
     static void Main() {
-        int[] numbers = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
-        int sumEven = 0;
-        int sumOdd = 0;
+        int[] numbersArrayOne = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+        int[] numbersArrayTwo = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+        int sum = 0;
+        bool isValid = true;
+        int index = 0;
 
-        foreach (int num in numbers) {
-            if (num % 2 == 0) {
-                sumEven += num;
+        for (int i = 0; i < numbersArrayOne.Length; i++) {
+            if (numbersArrayOne[i] != numbersArrayTwo[i]) {
+                isValid = false;
+                index = i;
+                break;
             }
-            else {
-                sumOdd += num; 
-            }
+            sum += numbersArrayOne[i];
         }
-        Console.WriteLine(sumEven - sumOdd);
+
+        if (isValid) {
+            Console.WriteLine($"Arrays are identical. Sum: {sum}");
+        }
+        else {
+            Console.WriteLine($"Arrays are not identical. Found difference at {index} index");
+        }
     }
 }
