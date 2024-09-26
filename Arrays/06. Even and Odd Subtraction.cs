@@ -1,16 +1,20 @@
 using System;
 using System.Linq;
 
-class SumEvenNumbers {
+class SumAndOddEvenNumbers {
     static void Main() {
         int[] numbers = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
-        int sum = 0;
+        int sumEven = 0;
+        int sumOdd = 0;
 
         foreach (int num in numbers) {
             if (num % 2 == 0) {
-                sum += num;
+                sumEven += num;
+            }
+            else {
+                sumOdd += num; 
             }
         }
-        Console.WriteLine(sum);
+        Console.WriteLine(sumEven - sumOdd);
     }
 }
