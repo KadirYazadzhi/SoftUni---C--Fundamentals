@@ -10,6 +10,7 @@ class MultiplicationTable2 {
             sum = num * i;
             Console.WriteLine($"{num} X {i} = {sum}");
         }
+        
         if (num2 > 10) {
             sum = num * num2;
             Console.WriteLine($"{num} X {num2} = {sum}");
