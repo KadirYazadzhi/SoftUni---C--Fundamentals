@@ -5,12 +5,7 @@ class PalindromeIntegers {
         string numbers = Console.ReadLine();
 
         while (numbers != "END") {
-            if (isPalindrome(numbers)) {
-                Console.WriteLine("true");
-            }
-            else {
-                Console.WriteLine("false"); 
-            }
+            Console.WriteLine(isPalindrome(numbers));
 
             numbers = Console.ReadLine();
         }
