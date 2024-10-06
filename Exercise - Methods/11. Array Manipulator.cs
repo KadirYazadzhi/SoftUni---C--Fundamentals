@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 class ArrayManipulator {
     static void Main() {
@@ -24,24 +25,23 @@ class ArrayManipulator {
                 case "first":
                     int firstCount = int.Parse(arguments[1]);
                     string firstType = arguments[2];
-                    PrintFirstElement(numbers, firstCount, firstType);
+                    PrintFirstElements(numbers, firstCount, firstType);
                     break;
                 case "last":
                     int lastCount = int.Parse(arguments[1]);
                     string lastType = arguments[2];
-                    PrintLastElement(numbers, lastCount, lastType);
+                    PrintLastElements(numbers, lastCount, lastType);
                     break;
             }
         }
     }
 
-    static bool isValidIndex(int index, int end) {
+    static bool IsValidIndex(int index, int end) {
         return index >= 0 && index < end;
     }
 
-
     static int[] Exchange(int[] numbers, int index) {
-        if (!isValidIndex(index, numbers.Length)) {
+        if (!IsValidIndex(index, numbers.Length)) {
             Console.WriteLine("Invalid index");
             return numbers;
         }
@@ -62,20 +62,20 @@ class ArrayManipulator {
         return changedArr;
     }
 
-    static void PrintLastElement(int[] numbers, int count, string type) {
+    static void PrintLastElements(int[] numbers, int count, string type) {
         if (count > numbers.Length) {
             Console.WriteLine("Invalid count");
             return;
         }
 
-        string lastElementsResult = "";
+        int[] result = new int[count];
         int elementsCount = 0;
 
-        for (int i = numbers.Length - 1; i >= 0 ; i++) {
+        for (int i = numbers.Length - 1; i >= 0; i--) {
             int number = numbers[i];
 
-            if (isValidForEvenOrOdd(type, number)) {
-                lastElementsResult = $"{number}, " + lastElementsResult;
+            if (IsValidForEvenOrOdd(type, number)) {
+                result[elementsCount] = number;
                 elementsCount++;
                 if (elementsCount >= count) {
                     break;
@@ -83,24 +83,24 @@ class ArrayManipulator {
             }
         }
 
-        lastElementsResult = lastElementsResult.Trim(' ', ',');
-        Console.WriteLine($"[{lastElementsResult}]");
+        Array.Resize(ref result, elementsCount);
+        Console.WriteLine($"[{string.Join(", ", result.Reverse())}]");
     }
 
-    static void PrintFirstElement(int[] numbers, int count, string type) {
+    static void PrintFirstElements(int[] numbers, int count, string type) {
         if (count > numbers.Length) {
             Console.WriteLine("Invalid count");
             return;
         }
 
-        string firstElementsResult = "";
+        int[] result = new int[count];
         int elementsCount = 0;
 
         for (int i = 0; i < numbers.Length; i++) {
             int number = numbers[i];
 
-            if (isValidForEvenOrOdd(type, number)) {
-                firstElementsResult += $"{number}, ";
+            if (IsValidForEvenOrOdd(type, number)) {
+                result[elementsCount] = number;
                 elementsCount++;
                 if (elementsCount >= count) {
                     break;
@@ -108,8 +108,8 @@ class ArrayManipulator {
             }
         }
 
-        firstElementsResult = firstElementsResult.Trim(' ', ',');
-        Console.WriteLine($"[{firstElementsResult}]");
+        Array.Resize(ref result, elementsCount);
+        Console.WriteLine($"[{string.Join(", ", result)}]");
     }
 
     static void PrintMinIndex(int[] numbers, string type) {
@@ -119,15 +119,19 @@ class ArrayManipulator {
         for (int i = 0; i < numbers.Length; i++) {
             int number = numbers[i];
 
-            if (isValidForEvenOrOdd(type, number)) {
-                if (number <= maxNumber) {
+            if (IsValidForEvenOrOdd(type, number)) {
+                if (number < minNumber) {
                     minIndex = i;
                     minNumber = number;
                 }
             }
         }
 
-        indexIsChange(index);
+        if (minIndex != -1) {
+            Console.WriteLine(minIndex);
+        } else {
+            Console.WriteLine("No matches");
+        }
     }
 
     static void PrintMaxIndex(int[] numbers, string type) {
@@ -137,27 +141,22 @@ class ArrayManipulator {
         for (int i = 0; i < numbers.Length; i++) {
             int number = numbers[i];
 
-            if (isValidForEvenOrOdd(type, number)) {
-                if (number >= maxNumber) {
+            if (IsValidForEvenOrOdd(type, number)) {
+                if (number > maxNumber) {
                     maxIndex = i;
                     maxNumber = number;
                 }
             }
         }
 
-        indexIsChange(index);
-    }
-    
-    static void indexIsChange(int index) {
-        if (index != -1) {
+        if (maxIndex != -1) {
             Console.WriteLine(maxIndex);
-        }
-        else {
+        } else {
             Console.WriteLine("No matches");
         }
     }
 
-    static bool isValidForEvenOrOdd(string type, int number) {
+    static bool IsValidForEvenOrOdd(string type, int number) {
         return type == "odd" && number % 2 != 0 || type == "even" && number % 2 == 0;
     }
 }
