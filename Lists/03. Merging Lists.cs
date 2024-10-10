@@ -8,14 +8,7 @@ class MergingLists {
         List<double> numbers2 = Console.ReadLine().Split().Select(double.Parse).ToList(); 
 
         List<double> resultNumbers = new List<double>(); 
-
-        int end = 0;
-        if (numbers1.Count > numbers2.Count) {
-            end = numbers1.Count;
-        } 
-        else {
-            end = numbers2.Count;
-        }
+        int end = numbers1.Count > numbers2.Count ? numbers1.Count : numbers2.Count;
 
         for (int i = 0; i < end; i++) {
             if (numbers1.Count > i) {
