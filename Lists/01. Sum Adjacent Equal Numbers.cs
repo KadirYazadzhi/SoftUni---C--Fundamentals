@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-class TopNumbers {
+class SumAdjacentEqualNumbers {
     static void Main() {
         List<double> numbers = Console.ReadLine().Split().Select(double.Parse).ToList();
 
