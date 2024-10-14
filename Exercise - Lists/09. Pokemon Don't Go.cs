@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-internal class Program {
+internal class PokemonDontGo {
     static void Main() {
         List<int> list = Console.ReadLine().Split().Select(int.Parse).ToList();
         int sum = 0;
