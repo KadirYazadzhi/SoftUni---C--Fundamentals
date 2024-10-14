@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-internal class Program {
+internal class AnonymousThreat {
     static void Main() {
         List<string> list = Console.ReadLine().Split().ToList();
 
