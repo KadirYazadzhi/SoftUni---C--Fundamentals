@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 
-class ListsOperations {
+class SoftUniCoursePlanning {
     static void Main() {
         List<string> lessons = Console.ReadLine().Split(',').Select(s => s.Trim()).ToList();
 
